@@ -2,7 +2,7 @@
 <div class="container">
   <table class="table table-sm table-bordered table-dark col-8 center" style="margin-left:13px;">
   <button type="button" class="btn btn-white border-primary" style="margin-left:13px;"> 
-  <%= link_to 'Recevoir un email', emails_path, method: :post%>
+  <%= link_to 'Recevoir un email', emails_path, method: :post, remote: true%>
   </button>
 <br>
 <br>
@@ -14,15 +14,16 @@
     </thead>
     <tbody> 
   <%@emails.each do |email|%>
-      <tr id="email-list">
-        <th scope="row"><%= email.object%></th>
-        <th scope="row"></th>
-      </tr> 
+      <tr><%= render 'email', email: email %></tr>
+    
     </tbody>
     <% end %>
+    
   </table>
   
   
 </div> 
+
+
 
 

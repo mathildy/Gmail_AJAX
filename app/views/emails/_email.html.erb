@@ -1,0 +1,6 @@
+ <tr id="<%=email.id%>">
+
+    <th id="email-list"><%= link_to email.object, email_path(email.id), class:"text-primary", remote: true %></th>
+    <th id="email-content" scope="row"> <%= render 'email_content', email: email %></th>
+
+  </tr> 
